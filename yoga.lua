@@ -31,7 +31,7 @@ RegisterNetEvent('yoga:start', function()
             SucceededAttempts = 0
             FreezeEntityPosition(ped, false)
             TriggerServerEvent('hud:server:RelieveStress', 5)
-            DRPCore.Functions.Notify("You have a bit less stress", "success")
+            QBCore.Functions.Notify("You have a bit less stress", "success")
         else
             Skillbar.Repeat({
                 duration = math.random(700, 1250),
@@ -43,7 +43,7 @@ RegisterNetEvent('yoga:start', function()
     end, function()
         ClearPedTasks(ped)
         FreezeEntityPosition(ped, false)
-        DRPCore.Functions.Notify("Failed, focus..", "error")
+        QBCore.Functions.Notify("Failed, focus..", "error")
         SetPedToRagdollWithFall(ped, 1000, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
         SucceededAttempts = 0
     end)
